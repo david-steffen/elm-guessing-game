@@ -9138,8 +9138,8 @@ var _user$project$Main$compareGuess = F2(
 			return _elm_lang$core$Native_Utils.crashCase(
 				'Main',
 				{
-					start: {line: 100, column: 5},
-					end: {line: 107, column: 33}
+					start: {line: 102, column: 5},
+					end: {line: 109, column: 33}
 				},
 				_p1)('No number was generated');
 		} else {
@@ -9235,7 +9235,11 @@ var _user$project$Main$update = F2(
 					_elm_lang$core$Platform_Cmd_ops['!'],
 					_elm_lang$core$Native_Utils.update(
 						model,
-						{state: _user$project$Main$Playing}),
+						{
+							state: _user$project$Main$Playing,
+							guesses: {ctor: '[]'},
+							message: _elm_lang$core$Maybe$Nothing
+						}),
 					{
 						ctor: '::',
 						_0: A2(
@@ -9337,8 +9341,8 @@ var _user$project$Main$finished = function (_p14) {
 		return _elm_lang$core$Native_Utils.crashCase(
 			'Main',
 			{
-				start: {line: 150, column: 5},
-				end: {line: 160, column: 18}
+				start: {line: 152, column: 5},
+				end: {line: 162, column: 18}
 			},
 			_p16)('No number was generated');
 	} else {

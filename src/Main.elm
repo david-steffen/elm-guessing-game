@@ -40,6 +40,8 @@ update msg model =
         Play ->
             { model
                 | state = Playing
+                , guesses = []
+                , message = Nothing
                 } ! [ Random.generate NewNumber (Random.int 1 100) ]
         Stop ->
             { model
