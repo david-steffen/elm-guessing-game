@@ -1,0 +1,347 @@
+var _user$project$Data$projects = {
+	ctor: '::',
+	_0: {
+		name: 'Dabapps',
+		url: 'https://www.dabapps.com/',
+		image: _elm_lang$core$Maybe$Just('dabapps.jpg'),
+		heading: 'Python and frontend',
+		description: '\n              Worked on a few projects from legacy to greenfield, adding new features\n              to planning and implementing new builds. All Django based, from versions 1.8 – 1.11\n              with all latest projects written using rest (DRF) with single page apps\n              (React) on the frontend.\n              ',
+		expired: false
+	},
+	_1: {
+		ctor: '::',
+		_0: {
+			name: 'BookMyGarage',
+			url: 'http://www.bookmygarage.com',
+			image: _elm_lang$core$Maybe$Just('tootcompare.jpg'),
+			heading: 'Python and frontend',
+			description: '\n              First project for Dabapps. I added new features using Django framework with MySQL\n              database and fixing bugs on the api backend and frontend plus frontend changes using jQuery\n              ',
+			expired: false
+		},
+		_1: {
+			ctor: '::',
+			_0: {
+				name: 'Lumesse',
+				url: 'http://www.lumesselearning.com/',
+				image: _elm_lang$core$Maybe$Just('lumesse.jpg'),
+				heading: 'Frontend',
+				description: '\n                I was working on e-learning apps and games using jQuery and Vue.js for clients\n                such as Barclays, Rolls Royce, Vodafone and Ernst & Young.\n                I Also wrote an Html 5 test suite for the company so that clients could\n                test which features were working while developing new projects.\n                ',
+				expired: false
+			},
+			_1: {
+				ctor: '::',
+				_0: {
+					name: 'ScorpionTrack',
+					url: 'https://scorpiontrack.com/',
+					image: _elm_lang$core$Maybe$Just('scorpion.jpg'),
+					heading: 'PHP and Java',
+					description: 'I was tasked with removing all database functionality from a Java netty server application that communicated with the satellite tracking units and converting the message data to json and sending it to a PHP server. Also rewriting some of the java functionality in PHP for storing and processing the tracking unit message data and added some extra functionality on the current codeigniter site.',
+					expired: false
+				},
+				_1: {
+					ctor: '::',
+					_0: {
+						name: 'Plainsail',
+						url: 'http://plainsailwealth.com',
+						image: _elm_lang$core$Maybe$Just('plainsail.jpg'),
+						heading: 'Frontend and backend',
+						description: 'Greenfield project doing both frontend and backend, with contact form written in php with swiftmailer library for emails',
+						expired: false
+					},
+					_1: {
+						ctor: '::',
+						_0: {
+							name: 'Premier Lets',
+							url: 'http://www.premierletsandsales.com',
+							image: _elm_lang$core$Maybe$Just('premier.jpg'),
+							heading: 'PHP - Wordpress',
+							description: 'Built a plugin for the homepage to display the featured lets and sales selected by the admin for display plus refactored and updated old php code in the theme',
+							expired: false
+						},
+						_1: {
+							ctor: '::',
+							_0: {
+								name: 'Pallant Digital',
+								url: 'http://pallant.digital',
+								image: _elm_lang$core$Maybe$Just('pallant.jpg'),
+								heading: 'Frontend and Backend',
+								description: 'This greenfield project was built using the Laravel framework in PHP',
+								expired: false
+							},
+							_1: {
+								ctor: '::',
+								_0: {
+									name: 'Coremed Staff',
+									url: 'http://core.la',
+									image: _elm_lang$core$Maybe$Just('cmstaff.jpg'),
+									heading: 'PHP',
+									description: 'Built with Laravel, i was tasked with adding new features such as CSV download and other changes for the admin panel',
+									expired: false
+								},
+								_1: {
+									ctor: '::',
+									_0: {
+										name: 'Beaumont & Fletcher',
+										url: 'http://www.beaumontandfletcher.com',
+										image: _elm_lang$core$Maybe$Just('beaumont.jpg'),
+										heading: 'Frontend',
+										description: 'HTML5, CSS3, Sass, Javascript/jQuery',
+										expired: false
+									},
+									_1: {
+										ctor: '::',
+										_0: {
+											name: 'Touchstay',
+											url: 'http=//www.touchstay.com',
+											image: _elm_lang$core$Maybe$Just('touchstay.jpg'),
+											heading: 'Frontend',
+											description: 'HTML5, CSS3, Sass, Javascript/jQuery, Application cache, Google maps api',
+											expired: false
+										},
+										_1: {
+											ctor: '::',
+											_0: {
+												name: 'WinCashLive',
+												url: 'https://www.wincashlive.com',
+												image: _elm_lang$core$Maybe$Just('wincashlive.jpg'),
+												heading: 'Frontend and backend',
+												description: 'Worked on a live betting project called wincashlive using Codeigniter framework with the rest client library where I wrote some components of the site including user account functionality in PHP, HTML, CSS3, Javascript/jQuery',
+												expired: true
+											},
+											_1: {
+												ctor: '::',
+												_0: {
+													name: 'Firetext',
+													url: 'http://www.firetext.co.uk',
+													image: _elm_lang$core$Maybe$Just('firetext.jpg'),
+													heading: 'Freelance - PHP',
+													description: 'The client wanted to implement the Constant Contact API in order to allow the user to import contacts into their Firetext account',
+													expired: false
+												},
+												_1: {
+													ctor: '::',
+													_0: {
+														name: 'Sipface',
+														url: 'http://sipface.co.uk',
+														image: _elm_lang$core$Maybe$Just('sipface.jpg'),
+														heading: 'Backend - PHP',
+														description: 'I built this Facebook competition app in PHP using our own MVC mostly on my own. The only thing i didn\'t build was the CMS which was built by my colleague due to time restraints. It was a white label contract hence the reason why it is not on our company website. We had a very tight deadline, 5 weeks in total, but managed to get it finished in time.',
+														expired: true
+													},
+													_1: {
+														ctor: '::',
+														_0: {
+															name: 'Mysiag',
+															url: 'http://mysiag.fr',
+															image: _elm_lang$core$Maybe$Just('mysiag.jpg'),
+															heading: 'Backend',
+															description: 'PHP optimisation for database queries and quarterly server maintenance using QUALSYS security audits.',
+															expired: false
+														},
+														_1: {
+															ctor: '::',
+															_0: {
+																name: 'Koffeecup',
+																url: 'http://www.koffeecup.net',
+																image: _elm_lang$core$Maybe$Just('koffeecup.jpg'),
+																heading: 'Frontend and backend',
+																description: 'Added video or image banners of current projects to the hompage occasionally and on our bespoke bugtracker i added frontend filtering of bugs by different criteria capability using javascript. I also setup a Flash media server for live streaming but switched to Wowza halfway through due to requirements',
+																expired: false
+															},
+															_1: {
+																ctor: '::',
+																_0: {
+																	name: 'Pieria',
+																	url: 'http://pieria.co.uk',
+																	image: _elm_lang$core$Maybe$Just('pieria.jpg'),
+																	heading: 'Frontend',
+																	description: 'Second project for Koffeecup. I wrote the user details update functionality plus infinite scroll in javascript and did the email template plus a few other small bits.',
+																	expired: false
+																},
+																_1: {
+																	ctor: '::',
+																	_0: {
+																		name: 'Backr',
+																		url: 'http://backr.net',
+																		image: _elm_lang$core$Maybe$Just('backr.jpg'),
+																		heading: 'Frontend plus a bit of PHP',
+																		description: 'First project I worked on at Koffeecup. I rebuilt the javascript for the carousel on homepage, created survey for new user. IE7 & 8 browser compatibility, Profile edit functionality in js, login and registration validation. Social widgets implementation and Java/Selenium Ux automated testing app. Deeplinking for social sharing on the dashboard.',
+																		expired: true
+																	},
+																	_1: {
+																		ctor: '::',
+																		_0: {
+																			name: 'Cluboid',
+																			url: 'http://www.cluboid.com',
+																			image: _elm_lang$core$Maybe$Just('cluboid.jpg'),
+																			heading: 'Web Developer',
+																			description: 'I was tasked with developing the cluboid site powered by Wordpress working with HTML, CSS, jQuery, PHP and MySQL. I also worked with the mailchimp api and created a few cron tasks in PHP',
+																			expired: false
+																		},
+																		_1: {ctor: '[]'}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+};
+var _user$project$Data$TechLib = F2(
+	function (a, b) {
+		return {name: a, icon: b};
+	});
+var _user$project$Data$Tech = F3(
+	function (a, b, c) {
+		return {title: a, icon: b, libs: c};
+	});
+var _user$project$Data$techs = function () {
+	var placeholder = 'fa-angle-right';
+	return {
+		ctor: '::',
+		_0: A3(
+			_user$project$Data$Tech,
+			'PHP',
+			'icon-php-alt',
+			{
+				ctor: '::',
+				_0: A2(_user$project$Data$TechLib, 'Laravel', 'icon-laravel'),
+				_1: {
+					ctor: '::',
+					_0: A2(_user$project$Data$TechLib, 'Codeigniter', 'icon-codeigniter'),
+					_1: {ctor: '[]'}
+				}
+			}),
+		_1: {
+			ctor: '::',
+			_0: A3(
+				_user$project$Data$Tech,
+				'Python',
+				'icon-python',
+				{
+					ctor: '::',
+					_0: A2(_user$project$Data$TechLib, 'Django', placeholder),
+					_1: {
+						ctor: '::',
+						_0: A2(_user$project$Data$TechLib, 'Selenium', placeholder),
+						_1: {ctor: '[]'}
+					}
+				}),
+			_1: {
+				ctor: '::',
+				_0: A3(
+					_user$project$Data$Tech,
+					'Java',
+					'icon-java-bold',
+					{
+						ctor: '::',
+						_0: A2(_user$project$Data$TechLib, 'Netty', placeholder),
+						_1: {
+							ctor: '::',
+							_0: A2(_user$project$Data$TechLib, 'Vert.x', placeholder),
+							_1: {
+								ctor: '::',
+								_0: A2(_user$project$Data$TechLib, 'Selenium', placeholder),
+								_1: {ctor: '[]'}
+							}
+						}
+					}),
+				_1: {
+					ctor: '::',
+					_0: A3(
+						_user$project$Data$Tech,
+						'Javascript',
+						'icon-javascript-alt',
+						{
+							ctor: '::',
+							_0: A2(_user$project$Data$TechLib, 'JQuery', 'icon-jquery'),
+							_1: {
+								ctor: '::',
+								_0: A2(_user$project$Data$TechLib, 'React / Redux', 'icon-reactjs'),
+								_1: {
+									ctor: '::',
+									_0: A2(_user$project$Data$TechLib, 'Ractive', placeholder),
+									_1: {
+										ctor: '::',
+										_0: A2(_user$project$Data$TechLib, 'Vue', placeholder),
+										_1: {
+											ctor: '::',
+											_0: A2(_user$project$Data$TechLib, 'Webpack', placeholder),
+											_1: {ctor: '[]'}
+										}
+									}
+								}
+							}
+						}),
+					_1: {
+						ctor: '::',
+						_0: A3(
+							_user$project$Data$Tech,
+							'HTML',
+							'icon-html5',
+							{
+								ctor: '::',
+								_0: A2(_user$project$Data$TechLib, 'HTML5 boilerplate', 'fa-star'),
+								_1: {
+									ctor: '::',
+									_0: A2(_user$project$Data$TechLib, 'Bootstrap', 'icon-bootstrap'),
+									_1: {ctor: '[]'}
+								}
+							}),
+						_1: {
+							ctor: '::',
+							_0: A3(
+								_user$project$Data$Tech,
+								'CSS',
+								'icon-css3',
+								{
+									ctor: '::',
+									_0: A2(_user$project$Data$TechLib, 'Sass', 'icon-sass'),
+									_1: {
+										ctor: '::',
+										_0: A2(_user$project$Data$TechLib, 'Less', placeholder),
+										_1: {ctor: '[]'}
+									}
+								}),
+							_1: {
+								ctor: '::',
+								_0: A3(
+									_user$project$Data$Tech,
+									'Database',
+									'icon-database-alt2',
+									{
+										ctor: '::',
+										_0: A2(_user$project$Data$TechLib, 'MySQL', 'icon-mysql'),
+										_1: {
+											ctor: '::',
+											_0: A2(_user$project$Data$TechLib, 'PostgreSQL', 'icon-postgres'),
+											_1: {
+												ctor: '::',
+												_0: A2(_user$project$Data$TechLib, 'MongoDB', 'icon-mongodb'),
+												_1: {ctor: '[]'}
+											}
+										}
+									}),
+								_1: {ctor: '[]'}
+							}
+						}
+					}
+				}
+			}
+		}
+	};
+}();
+var _user$project$Data$Project = F6(
+	function (a, b, c, d, e, f) {
+		return {name: a, url: b, image: c, heading: d, description: e, expired: f};
+	});

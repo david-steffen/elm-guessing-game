@@ -1,0 +1,74 @@
+var _user$project$Routes$NotFoundR = {ctor: 'NotFoundR'};
+var _user$project$Routes$notFoundR = A2(
+	_Bogdanp$elm_route$Route_ops[':='],
+	_user$project$Routes$NotFoundR,
+	_Bogdanp$elm_route$Route$static('404/'));
+var _user$project$Routes$ProjectsR = function (a) {
+	return {ctor: 'ProjectsR', _0: a};
+};
+var _user$project$Routes$projectsR = A2(
+	_Bogdanp$elm_route$Route_ops[':='],
+	_user$project$Routes$ProjectsR,
+	A2(
+		_Bogdanp$elm_route$Route_ops['</>'],
+		_Bogdanp$elm_route$Route$static('projects'),
+		_Bogdanp$elm_route$Route$int));
+var _user$project$Routes$HomeR = {ctor: 'HomeR'};
+var _user$project$Routes$homeR = A2(
+	_Bogdanp$elm_route$Route_ops[':='],
+	_user$project$Routes$HomeR,
+	_Bogdanp$elm_route$Route$static(''));
+var _user$project$Routes$sitemap = _Bogdanp$elm_route$Route$router(
+	{
+		ctor: '::',
+		_0: _user$project$Routes$homeR,
+		_1: {
+			ctor: '::',
+			_0: _user$project$Routes$projectsR,
+			_1: {
+				ctor: '::',
+				_0: _user$project$Routes$notFoundR,
+				_1: {ctor: '[]'}
+			}
+		}
+	});
+var _user$project$Routes$match = function (_p0) {
+	return A2(
+		_elm_lang$core$Maybe$withDefault,
+		_user$project$Routes$NotFoundR,
+		A2(_Bogdanp$elm_route$Route$match, _user$project$Routes$sitemap, _p0));
+};
+var _user$project$Routes$parsePath = function (_p1) {
+	return _user$project$Routes$match(
+		function (_) {
+			return _.pathname;
+		}(_p1));
+};
+var _user$project$Routes$toString = function (r) {
+	var _p2 = r;
+	switch (_p2.ctor) {
+		case 'HomeR':
+			return A2(
+				_Bogdanp$elm_route$Route$reverse,
+				_user$project$Routes$homeR,
+				{ctor: '[]'});
+		case 'ProjectsR':
+			return A2(
+				_Bogdanp$elm_route$Route$reverse,
+				_user$project$Routes$projectsR,
+				{
+					ctor: '::',
+					_0: _elm_lang$core$Basics$toString(_p2._0),
+					_1: {ctor: '[]'}
+				});
+		default:
+			return A2(
+				_Bogdanp$elm_route$Route$reverse,
+				_user$project$Routes$notFoundR,
+				{ctor: '[]'});
+	}
+};
+var _user$project$Routes$navigateTo = function (_p3) {
+	return _elm_lang$navigation$Navigation$newUrl(
+		_user$project$Routes$toString(_p3));
+};

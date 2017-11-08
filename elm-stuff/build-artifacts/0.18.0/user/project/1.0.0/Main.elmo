@@ -1,0 +1,433 @@
+var _user$project$Main$displayGuesses = function (guesses) {
+	return A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$h4,
+				{ctor: '[]'},
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html$text('Previous Guesses - '),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$span,
+							{ctor: '[]'},
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html$text(
+									A2(
+										_elm_lang$core$Basics_ops['++'],
+										'attempts ',
+										_elm_lang$core$Basics$toString(
+											_elm_lang$core$List$length(guesses)))),
+								_1: {ctor: '[]'}
+							}),
+						_1: {ctor: '[]'}
+					}
+				}),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$div,
+					{ctor: '[]'},
+					A2(
+						_elm_lang$core$List$map,
+						function (x) {
+							return A2(
+								_elm_lang$html$Html$div,
+								{ctor: '[]'},
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html$text(x),
+									_1: {ctor: '[]'}
+								});
+						},
+						guesses)),
+				_1: {ctor: '[]'}
+			}
+		});
+};
+var _user$project$Main$displayMessage = function (message) {
+	var content = function () {
+		var _p0 = message;
+		if (_p0.ctor === 'Nothing') {
+			return '';
+		} else {
+			return _p0._0;
+		}
+	}();
+	return A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$strong,
+				{ctor: '[]'},
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html$text(content),
+					_1: {ctor: '[]'}
+				}),
+			_1: {ctor: '[]'}
+		});
+};
+var _user$project$Main$subscriptions = function (model) {
+	return _elm_lang$core$Platform_Sub$none;
+};
+var _user$project$Main$compareGuess = F2(
+	function (guess, number) {
+		var _p1 = number;
+		if (_p1.ctor === 'Nothing') {
+			return _elm_lang$core$Native_Utils.crashCase(
+				'Main',
+				{
+					start: {line: 100, column: 5},
+					end: {line: 107, column: 33}
+				},
+				_p1)('No number was generated');
+		} else {
+			var _p3 = A2(_elm_lang$core$Basics$compare, guess, _p1._0);
+			switch (_p3.ctor) {
+				case 'LT':
+					return 'Too small!';
+				case 'EQ':
+					return 'You win!';
+				default:
+					return 'Too big!';
+			}
+		}
+	});
+var _user$project$Main$addGuessToList = F3(
+	function (message, guess, _p4) {
+		var _p5 = _p4;
+		var guessString = A2(
+			_elm_lang$core$Basics_ops['++'],
+			'You guessed : ',
+			A2(
+				_elm_lang$core$Basics_ops['++'],
+				_elm_lang$core$Basics$toString(guess),
+				A2(_elm_lang$core$Basics_ops['++'], ' - ', message)));
+		return {ctor: '::', _0: guessString, _1: _p5.guesses};
+	});
+var _user$project$Main$isWithinRange = function (guess) {
+	return (_elm_lang$core$Native_Utils.cmp(guess, 0) < 0) ? false : ((_elm_lang$core$Native_Utils.cmp(guess, 100) > 0) ? false : true);
+};
+var _user$project$Main$Model = F5(
+	function (a, b, c, d, e) {
+		return {number: a, guess: b, state: c, message: d, guesses: e};
+	});
+var _user$project$Main$Finished = {ctor: 'Finished'};
+var _user$project$Main$checkGuess = function (_p6) {
+	var _p7 = _p6;
+	var _p12 = _p7.number;
+	var _p11 = _p7;
+	var _p10 = _p7.guess;
+	if (_elm_lang$core$Native_Utils.eq(_p12, _p10)) {
+		return _elm_lang$core$Native_Utils.update(
+			_p11,
+			{state: _user$project$Main$Finished});
+	} else {
+		var _p8 = _p10;
+		if (_p8.ctor === 'Nothing') {
+			return _elm_lang$core$Native_Utils.update(
+				_p11,
+				{
+					message: _elm_lang$core$Maybe$Just('Please choose a number')
+				});
+		} else {
+			var _p9 = _p8._0;
+			if (_user$project$Main$isWithinRange(_p9)) {
+				var comparedGuess = A2(_user$project$Main$compareGuess, _p9, _p12);
+				return _elm_lang$core$Native_Utils.update(
+					_p11,
+					{
+						message: _elm_lang$core$Maybe$Just(comparedGuess),
+						guesses: A3(_user$project$Main$addGuessToList, comparedGuess, _p9, _p11)
+					});
+			} else {
+				return _elm_lang$core$Native_Utils.update(
+					_p11,
+					{
+						message: _elm_lang$core$Maybe$Just('Guess must be between 1 and 100')
+					});
+			}
+		}
+	}
+};
+var _user$project$Main$Stopped = {ctor: 'Stopped'};
+var _user$project$Main$init = A2(
+	_elm_lang$core$Platform_Cmd_ops['!'],
+	{
+		number: _elm_lang$core$Maybe$Nothing,
+		guess: _elm_lang$core$Maybe$Nothing,
+		state: _user$project$Main$Stopped,
+		message: _elm_lang$core$Maybe$Nothing,
+		guesses: {ctor: '[]'}
+	},
+	{ctor: '[]'});
+var _user$project$Main$Playing = {ctor: 'Playing'};
+var _user$project$Main$NewNumber = function (a) {
+	return {ctor: 'NewNumber', _0: a};
+};
+var _user$project$Main$update = F2(
+	function (msg, model) {
+		var _p13 = msg;
+		switch (_p13.ctor) {
+			case 'Play':
+				return A2(
+					_elm_lang$core$Platform_Cmd_ops['!'],
+					_elm_lang$core$Native_Utils.update(
+						model,
+						{state: _user$project$Main$Playing}),
+					{
+						ctor: '::',
+						_0: A2(
+							_elm_lang$core$Random$generate,
+							_user$project$Main$NewNumber,
+							A2(_elm_lang$core$Random$int, 1, 100)),
+						_1: {ctor: '[]'}
+					});
+			case 'Stop':
+				return A2(
+					_elm_lang$core$Platform_Cmd_ops['!'],
+					_elm_lang$core$Native_Utils.update(
+						model,
+						{number: _elm_lang$core$Maybe$Nothing, state: _user$project$Main$Stopped}),
+					{ctor: '[]'});
+			case 'Change':
+				var val = _elm_lang$core$Result$toMaybe(
+					_elm_lang$core$String$toInt(_p13._0));
+				return A2(
+					_elm_lang$core$Platform_Cmd_ops['!'],
+					_elm_lang$core$Native_Utils.update(
+						model,
+						{guess: val}),
+					{ctor: '[]'});
+			case 'Guess':
+				return A2(
+					_elm_lang$core$Platform_Cmd_ops['!'],
+					_user$project$Main$checkGuess(model),
+					{ctor: '[]'});
+			default:
+				return A2(
+					_elm_lang$core$Platform_Cmd_ops['!'],
+					_elm_lang$core$Native_Utils.update(
+						model,
+						{
+							number: _elm_lang$core$Maybe$Just(_p13._0)
+						}),
+					{ctor: '[]'});
+		}
+	});
+var _user$project$Main$Guess = {ctor: 'Guess'};
+var _user$project$Main$Change = function (a) {
+	return {ctor: 'Change', _0: a};
+};
+var _user$project$Main$play = function (model) {
+	return A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$input,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$type_('number'),
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$html$Html_Attributes$placeholder('Enter your guess here'),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$html$Html_Events$onInput(_user$project$Main$Change),
+							_1: {ctor: '[]'}
+						}
+					}
+				},
+				{ctor: '[]'}),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$button,
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$Guess),
+						_1: {ctor: '[]'}
+					},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('Guess'),
+						_1: {ctor: '[]'}
+					}),
+				_1: {
+					ctor: '::',
+					_0: _user$project$Main$displayMessage(model.message),
+					_1: {
+						ctor: '::',
+						_0: _user$project$Main$displayGuesses(model.guesses),
+						_1: {ctor: '[]'}
+					}
+				}
+			}
+		});
+};
+var _user$project$Main$Stop = {ctor: 'Stop'};
+var _user$project$Main$Play = {ctor: 'Play'};
+var _user$project$Main$finished = function (_p14) {
+	var _p15 = _p14;
+	var _p16 = _p15.number;
+	if (_p16.ctor === 'Nothing') {
+		return _elm_lang$core$Native_Utils.crashCase(
+			'Main',
+			{
+				start: {line: 150, column: 5},
+				end: {line: 160, column: 18}
+			},
+			_p16)('No number was generated');
+	} else {
+		return A2(
+			_elm_lang$html$Html$div,
+			{ctor: '[]'},
+			{
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$h3,
+					{ctor: '[]'},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('Congrats!'),
+						_1: {ctor: '[]'}
+					}),
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$p,
+						{ctor: '[]'},
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html$text('You guessed right'),
+							_1: {ctor: '[]'}
+						}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$p,
+							{ctor: '[]'},
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html$text(
+									A2(
+										_elm_lang$core$Basics_ops['++'],
+										'Answer - ',
+										_elm_lang$core$Basics$toString(_p16._0))),
+								_1: {ctor: '[]'}
+							}),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$p,
+								{ctor: '[]'},
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html$text(
+										A2(
+											_elm_lang$core$Basics_ops['++'],
+											'Number of guesses - ',
+											_elm_lang$core$Basics$toString(
+												_elm_lang$core$List$length(_p15.guesses)))),
+									_1: {ctor: '[]'}
+								}),
+							_1: {
+								ctor: '::',
+								_0: A2(
+									_elm_lang$html$Html$button,
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$Play),
+										_1: {ctor: '[]'}
+									},
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html$text('Play again'),
+										_1: {ctor: '[]'}
+									}),
+								_1: {ctor: '[]'}
+							}
+						}
+					}
+				}
+			});
+	}
+};
+var _user$project$Main$landing = A2(
+	_elm_lang$html$Html$div,
+	{ctor: '[]'},
+	{
+		ctor: '::',
+		_0: A2(
+			_elm_lang$html$Html$button,
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$Play),
+				_1: {ctor: '[]'}
+			},
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html$text('Start'),
+				_1: {ctor: '[]'}
+			}),
+		_1: {ctor: '[]'}
+	});
+var _user$project$Main$page = function (model) {
+	var _p18 = model.state;
+	switch (_p18.ctor) {
+		case 'Playing':
+			return _user$project$Main$play(model);
+		case 'Stopped':
+			return _user$project$Main$landing;
+		default:
+			return _user$project$Main$finished(model);
+	}
+};
+var _user$project$Main$view = function (model) {
+	return A2(
+		_elm_lang$html$Html$div,
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html_Attributes$id('container'),
+			_1: {ctor: '[]'}
+		},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$h1,
+				{ctor: '[]'},
+				{
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$span,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$class('fa icon-elm'),
+							_1: {ctor: '[]'}
+						},
+						{ctor: '[]'}),
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$html$Html$text(' Guessing Game'),
+						_1: {ctor: '[]'}
+					}
+				}),
+			_1: {
+				ctor: '::',
+				_0: _user$project$Main$page(model),
+				_1: {ctor: '[]'}
+			}
+		});
+};
+var _user$project$Main$main = _elm_lang$html$Html$program(
+	{init: _user$project$Main$init, update: _user$project$Main$update, view: _user$project$Main$view, subscriptions: _user$project$Main$subscriptions})();
